@@ -73,9 +73,9 @@ def predictions(y):
 
     model.compile(optimizer='adam', loss="mse")
 
-    model.fit(x=X, y=Y ,epochs=500, verbose=0)
+    model.fit(x=X, y=Y ,epochs=100, verbose=0)
 
-    y_predict = scaled_data.iloc[-30:]
+    y_predict = y.iloc[-30:]
     y_predict_scaled = scaler.fit_transform(y_predict)
     y_predict_scaled = y_predict_scaled.reshape(1,30,29)
     
